@@ -1,0 +1,14 @@
+<html>
+<head>
+    <title>Player - <%= result[0].first_name %> <%= result[0].last_name %></title>
+</head>
+<body>
+    <h1><%= result[0].first_name %> <%= result[0].last_name %>, #<%= result[0].player_num%></h1>
+        <h3>Position:</h3>
+    &nbsp&nbsp&nbsp   <%= result[0].position%>
+        <h3>Injured:</h3>
+    &nbsp&nbsp&nbsp   <%= result[0].injured%>
+        <h3>Team:</h3>
+    &nbsp&nbsp&nbsp   <a href="/team/?team_name=<%= result[0].team %>"><%= result[0].team %></a>
+</body>
+</html>

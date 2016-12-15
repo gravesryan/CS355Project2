@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Team - <%= result[0][0].team_name %></title>
+</head>
+<body>
+    <h1><%= result[0][0].city%> <%= result[0][0].team_name %></h1>
+    <h3>Location:</h3>
+    &nbsp&nbsp&nbsp   <%= result[0][0].city %>, <%= result[0][0].state%>
+    <h3>Wins/Losses:</h3>
+    &nbsp&nbsp&nbsp   <%= result[0][0].wins %> / <%= result[0][0].losses %>
+    <h3>Average Points Per Game:</h3>
+    &nbsp&nbsp&nbsp   <%= result[0][0].avg_ppg %>
+    <h3>Division:</h3>
+    &nbsp&nbsp&nbsp   <a href="/division/?div_name=<%= result[0][0].division %>"><%= result[0][0].division %></a>
+    <h3>Players: </h3>
+    <% for(var i=0; result[1].length > i; i++ ) { %>
+    <ul>
+        <a href="/player/?first_name=<%= result[1][i].first_name%>&last_name=<%= result[1][i].last_name%>"><%= result[1][i].first_name %> <%= result[1][i].last_name %></a>
+    </ul>
+    <% } %>
+</body>
+
+</html>

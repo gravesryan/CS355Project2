@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Division Champions</title>
+    </head>
+    <body>
+        <h1>Division Champions</h1>
+        <a href="/division_champs/add">Add New Division Champion</a>
+        <br />
+        <br/>
+
+        <table border="1">
+            <tr><th>Team</th><th>Year</th><th>Action</th></tr>
+            <% for(var i=0; result.length > i; i++ ) { %>
+            <tr>
+                <td><a href="/division_champs/?team=<%= result[i].team %>&year=<%=result[i].year%>"><%= result[i].team %></a></td>
+                <td><%= result[i].year %></td>
+                <td>
+                <form action="/division_champs/delete/" style="display:inline;">
+                    <input type="hidden" name="team" id="team" value="<%= result[i].team %>" />
+                    <input type="hidden" name="year" id="year" value="<%= result[i].year %>" />
+                    <input type="submit" value="Delete"/>
+                </form>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+    </body>
+
+</html>

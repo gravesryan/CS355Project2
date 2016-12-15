@@ -1,0 +1,15 @@
+<html>
+<head>
+    <title>Division - <%= result[0].division %> </title>
+</head>
+<body>
+    <h1><%= result[0].division %></h1>
+    <h3>Teams: </h3>
+    <% for(var i=0; result.length > i; i++ ) { %>
+    <ul>
+        <li><a href="/team/?team_name=<%= result[i].team_name %>"><%= result[i].team_name %></a></li>
+    </ul>
+    <% } %>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Add New Division Champion</title>
+</head>
+<body>
+    <h1>Add New Division Champion</h1>
+    <form action="/division_champs/insert" method="get">
+        Year: <input id="year" name="year" type="text" />
+        <br />
+        <br />
+        Team
+        <select id="team" name="team">
+            <% for(var i=0; team.length > i; i++ ) { %>
+                <option value="<%= team[i].team_name %>"><%= team[i].city + ' ' + team[i].team_name %></option>
+            <% } %>
+        </select>
+        <br/>
+        <br />
+        <input type="submit" />
+
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>SuperBowl Champions</title>
+    </head>
+    <body>
+        <h1>SuperBowl Champions</h1>
+        <a href="/superbowl_wins/add">Add New SuperBowl Champion</a>
+        <br />
+        <br/>
+
+        <table border="1">
+            <tr><th>Team</th><th>Year</th><th>Action</th></tr>
+            <% for(var i=0; result.length > i; i++ ) { %>
+            <tr>
+                <td><a href="/superbowl_wins/?team=<%= result[i].team %>&year=<%=result[i].year%>"><%= result[i].team %></a></td>
+                <td><%= result[i].year %></td>
+                <td>
+                    <form action="/superbowl_wins/delete/" style="display:inline;">
+                        <input type="hidden" name="team" id="team" value="<%= result[i].team %>" />
+                        <input type="hidden" name="year" id="year" value="<%= result[i].year %>" />
+                        <input type="submit" value="Delete"/>
+                        </form>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+    </body>
+
+</html>

@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>Update <%= team[0].team_name%></title>
+</head>
+<body>
+<h1>Update <%= team[0].team_name%></h1>
+<form action="/team/update" method="get">
+    <input type="hidden" id="team" name="team" value="<%= team[0].team_name %>">
+    Team Name: <input id="team_name" name="team_name" type="text" value="<%= team[0].team_name%>"/>
+    <br />
+    <br />
+    City: <input id="city" name="city" type="text" value="<%= team[0].city%>"/>
+    <br />
+    <br />
+    State: <input id="state" name="state" type="text" value="<%= team[0].state%>"/>
+    <br />
+    <br />
+    Wins: <input id="wins" name="wins" type="text" value="<%= team[0].wins%>"/>
+    <br />
+    <br />
+    Losses: <input id="losses" name="losses" type="text" value="<%= team[0].losses%>"/>
+    <br />
+    <br />
+    Average Points Per Game: <input id="avg_ppg" name="avg_ppg" type="text" value="<%= team[0].avg_ppg%>"/>
+    <br />
+    <br />
+    Division:
+    <select id="division" name="division">
+        <% for(var i=0; division.length > i; i++ ) {
+            var selected = "";
+            if(division[i].div_name == team[0].division) {
+                selected = "selected";
+            }
+        %>
+        <option value="<%= division[i].div_name %>" <%= selected %>><%= division[i].div_name %></option>
+        <% } %>
+    </select>
+
+    <br />
+
+    <input type="submit" />
+
+</form>
+</body>
+
+</html>

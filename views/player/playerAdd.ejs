@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Add New Player</title>
+</head>
+<body>
+    <h1>Add New Player</h1>
+    <form action="/player/insert" method="get">
+        First Name: <input id="first_name" name="first_name" type="text" />
+        <br />
+        <br />
+        Last Name: <input id="last_name" name="last_name" type="text" />
+        <br/>
+        <br/>
+        Player Number: <input id="player_num" name="player_num" type="text" />
+        <br/>
+        <br/>
+        Position: <input id="position" name="position" type="text" />
+        <br/>
+        <br/>
+        Injured: Yes<input id="injured" name="injured" type="checkbox" value="1" />   No<input id="injured" name="injured" type="checkbox" value="0" />
+        <br/>
+        <br/>
+        Team:
+        <select id="team" name="team">
+            <% for(var i=0; team.length > i; i++ ) { %>
+                <option value="<%= team[i].team_name %>"><%= team[i].team_name %></option>
+            <% } %>
+        </select>
+        <br/>
+        <br />
+        <input type="submit" />
+
+    </form>
+</body>
+
+</html>

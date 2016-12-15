@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>Update <%= player.first_name%> <%= player.last_name %></title>
+</head>
+<body>
+<h1>Update <%= player.first_name%> <%= player.last_name %></h1>
+<form action="/player/update" method="get">
+    <input type="hidden" id="first" name="first" value="<%= player.first_name %>">
+    <input type="hidden" id="last" name="last" value="<%= player.last_name %>">
+    First Name: <input id="first_name" name="first_name" type="text" value="<%= player.first_name%>"/>
+    <br />
+    <br />
+    Last Name: <input id="last_name" name="last_name" type="text" value="<%= player.last_name%>"/>
+    <br />
+    <br />
+    Player Number: <input id="player_num" name="player_num" type="text" value="<%= player.player_num%>"/>
+    <br />
+    <br />
+    Position: <input id="position" name="position" type="text" value="<%= player.position %>"/>
+    <br />
+    <br />
+    <% if (player.injured == 1) { %>
+        Injured: Yes<input id="injured" name="injured" type="checkbox" value="1" checked="true"/>   No<<input id="injured" name="injured" type="checkbox" value="0"/>
+    <%} else { %>
+    Injured: Yes<input id="injured" name="injured" type="checkbox" value="1" />   No<input id="injured" name="injured" type="checkbox" value="0" checked="true"/>
+    <%} %>
+    <br />
+    <br />
+    Team:
+    <select id="team" name="team">
+        <% for(var i=0; team.length > i; i++ ) {
+            var selected = "";
+            if(team[i].team_name == player.team) {
+                selected = "selected";
+            }
+        %>
+        <option value="<%= team[i].team_name %>" <%= selected %>><%= team[i].team_name %></option>
+        <% } %>
+    </select>
+
+    <br />
+    <br/>
+
+    <input type="submit" />
+
+</form>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Divisions</title>
+    </head>
+    <body>
+        <h1>Divisions</h1>
+        <br />
+
+        <table border="1">
+            <tr><th>Division</th></tr>
+            <% for(var i=0; result.length > i; i++ ) { %>
+            <tr>
+                <td><a href="/division/?div_name=<%= result[i].div_name %>"><%= result[i].div_name %></a></td>
+            </tr>
+            <% } %>
+        </table>
+    </body>
+
+</html>

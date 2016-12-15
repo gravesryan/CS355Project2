@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Add New Team</title>
+</head>
+<body>
+    <h1>Add New Team</h1>
+    <form action="/team/insert" method="get">
+        Team Name: <input id="team_name" name="team_name" type="text" />
+        <br />
+        <br />
+        City: <input id="city" name="city" type="text" />
+        <br/>
+        <br/>
+        State: <input id="state" name="state" type="text" />
+        <br/>
+        <br/>
+        Wins: <input id="wins" name="wins" type="text" />
+        <br/>
+        <br/>
+        Losses: <input id="losses" name="losses" type="text" />
+        <br/>
+        <br/>
+        Average Points Per Game: <input id="avg_ppg" name="avg_ppg" type="text" />
+        <br/>
+        <br/>
+        Division:
+        <select id="division" name="division">
+            <% for(var i=0; division.length > i; i++ ) { %>
+                <option value="<%= division[i].div_name %>"><%= division[i].div_name %></option>
+            <% } %>
+        </select>
+        <br/>
+        <br />
+        <input type="submit" />
+
+    </form>
+</body>
+
+</html>
